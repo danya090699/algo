@@ -30,7 +30,7 @@ struct Treap
         }
         else
         {
-            r->l = merge(r->l, l);
+            r->l = merge(l, r->l);
             return r;
         }
     }
