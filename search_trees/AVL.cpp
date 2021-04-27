@@ -17,7 +17,7 @@ struct AVL
     {
         int lh = v->l ? v->l->h : 0, rh = v->r ? v->r->h : 0;
 
-        v->h = min(lh, rh) + 1;
+        v->h = max(lh, rh) + 1;
         v->dif = lh - rh;
     }
 
@@ -43,6 +43,8 @@ struct AVL
 
     Node <T>* balance(Node <T> *v)
     {
+        recalc(v);
+        
         if(v->dif == -2)
         {
             if(v->r->dif == 1) v->r = right_turn(v->r);
