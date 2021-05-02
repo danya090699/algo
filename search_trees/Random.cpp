@@ -1,4 +1,4 @@
-mt19937 rnd(0);
+mt19937 rnd(time(0));
 
 template <class T>
 struct Node
